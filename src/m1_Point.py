@@ -100,9 +100,10 @@ class Point(object):
             return point1
 
     def halfway_to(self, point1):
-        self.x = self.x+(self.x-point1.x)/2
-        self.y = self.y+(self.y-point1.y)/2
-        return self
+        p = self.clone()
+        p.x = (p.x+point1.x)/2
+        p.y = (p.y+point1.y)/2
+        return p
 
 
 def run_test_init():
